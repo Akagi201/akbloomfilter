@@ -10,7 +10,7 @@ bloomfilter x64实现
 bloomfilter使用例子
 ---------------------------------
 ~~~~~ c
-  #include "akblookfilter.h"
+  #include "akbloomfilter.h"
 
   static BaseBloomFilter stBloomFilter = {0};
 
