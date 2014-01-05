@@ -88,4 +88,24 @@ typedef struct
 
 #pragma pack()
 
+inline int InitBloomFilter(BaseBloomFilter* pstBloomfilter, uint32_t dwSeed, uint32_t dwMaxItems, double dProbFalse);
+
+inline int FreeBloomFilter(BaseBloomFilter* pstBloomfilter);
+
+inline int ResetBloomFilter(BaseBloomFilter* pstBloomfilter);
+
+inline int RealResetBloomFilter(BaseBloomFilter* pstBloomfilter);
+
+FORCE_INLINE uint64_t MurmurHash2_x64(const void* key, int len, uint32_t seed);
+
+FORCE_INLINE void bloom_hash(BaseBloomFilter* pstBloomfilter, const void* key, int len);
+
+FORCE_INLINE int BloomFilter_Add(BaseBloomFilter* pstBloomfilter, const void* key, int len);
+
+FORCE_INLINE int BloomFilter_Check(BaseBloomFilter* pstBloomfilter, const void* key, int len);
+
+inline int SaveBloomFilterToFile(BaseBloomFilter* pstBloomfilter, char* szFileName);
+
+inline int LoadBloomFilterFromFile(BaseBloomFilter* pstBloomfilter, char* szFileName);
+
 #endif
